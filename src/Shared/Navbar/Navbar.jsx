@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FiPhoneCall } from 'react-icons/fi'
+import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 const Navbar = () => {
     return (
         <div>
@@ -16,7 +17,10 @@ const Navbar = () => {
                             <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/pricing'>Pricing</NavLink></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl" href='# '>daisyUI</a>
+                    <div className='flex items-end'>
+                        <img src={logo} alt="" className='w-10 h-12' />
+                        <p className='text-lg font-semibold uppercase text-gray-500 font-serif'>vacuum</p>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 gap-4">
