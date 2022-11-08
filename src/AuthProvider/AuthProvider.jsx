@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
     //log out 
     const logOut = () => {
         setLoading(true);
-        return signOut()
+        return signOut(auth)
     }
 
     //on auth state change

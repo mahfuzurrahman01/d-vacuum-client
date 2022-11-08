@@ -3,8 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Navbar = () => {
-    const {user}= useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user)
+    const logoutHandle = () => {
+        logOut()
+            .then(() => {
+                alert('logged out')
+            })
+            .catch(err => console.log(err.massage))
+    }
     return (
         <div>
             <div className="navbar bg-white md:w-4/5 w-full mx-auto" data-theme='emerald' >
@@ -33,9 +40,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end text-green-600">
-                    <Link to='/register'><div className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>
-                        <p>Register</p>
-                    </div></Link>
+                    {
+                        user?.email ? <button onClick={logoutHandle} className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>Logout</button> : <Link to='/register'><div className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>
+                            <p>Register</p>
+                        </div></Link>
+                    }
                 </div>
             </div>
         </div>
