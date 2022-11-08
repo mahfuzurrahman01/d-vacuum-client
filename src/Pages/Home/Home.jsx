@@ -17,7 +17,7 @@ const Home = () => {
         <div>
             <div className='relative'>
                 <img src={image} alt="" className='w-full lg:h-[500px] md:h-[300px] h-[200px]' />
-                <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 lg:w-3/5 w-full absolute lg:top-[10%] top-2 lg:right-64 p-10' >
+                <div className='grid lg:grid-cols-2 grid-cols-1 gap-10 lg:w-3/5 w-full absolute lg:top-[8%] top-2 lg:right-64 p-10' >
                     <div className=' flex lg:flex-col flex-row lg:gap-0 md:gap-3 gap-5 justify-center w-full' data-aos='fade-left'>
                         <p className='text-xs text-green-600 md:block hidden'>GUARANTEED</p>
                         <div>
@@ -29,9 +29,11 @@ const Home = () => {
                     </div>
                     <div data-aos='fade-right' className='lg:block hidden'>
                         <div className="flex items-center justify-center text-center bg-white bg-opacity-60 text-gray-100">
-                            <form noValidate="" action="" className="flex flex-col w-full max-w-lg p-12 rounded shadow-lg  text-gray-100 ng-untouched ng-pristine ng-valid">
+                            <form noValidate="" action="" className="flex flex-col w-full p-8 rounded shadow-lg  text-gray-100 ng-untouched ng-pristine ng-valid">
                                 <p className='text-lg font-semibold text-gray-700'>Request an estimate</p>
                                 <input id="name" placeholder='Your name' name='name' type="text" className="flex items-center h-10 text-xs px-4 mt-2 focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600" />
+
+                                <input id="photoUrl" placeholder='Your photo url' name='photourl' type="text" className="flex items-center h-10 text-xs px-4 mt-2 focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600" />
 
                                 <input id="email" placeholder='Your email' type="email" name='email' className="flex items-center h-10 text-xs px-4 mt-2 focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600" />
 
@@ -53,7 +55,7 @@ const Home = () => {
                     <div className='lg:w-1/3 md:w-1/2 w-full'>
                         <p className='lg:text-4xl md:text-2xl text-xl font-bold ml-5' style={{ color: '#83BD75' }}>Complete and quick cleaning services</p>
                     </div>
-                    <div className='lg:w-1/2 w-4/5 border-l-4 border-gray-800 pl-5'>
+                    <div className='lg:w-1/2 w-4/5 border-l-4 border-gray-400 pl-5'>
                         <p className='text-gray-600 text-sm'>Listening to my customers and providing a consistently high quality of service in a cost-effective manner is how I’ve work with this sector back in 2020 to what D Vacuum is today: a cleaning operation of more than 100 professionals taking care of two million square feet of space throughout Metropolitan Boston and Southeastern Massachusetts.</p>
                     </div>
                 </div>
@@ -65,7 +67,7 @@ const Home = () => {
 
             </div>
             <div className='w-1/4 mx-auto flex items-center justify-center mb-10'>
-                <button className='text-white font-semibold py-1 px-10 ' style={{ backgroundColor: '#83BD75' }}><Link to='/services'>See All</Link></button>
+                <button className='text-white font-semibold py-1 px-10 ' style={{ backgroundColor: '#83BD75' }}><Link to='/services'>Show All</Link></button>
             </div>
             {/* how to order  */}
             <section className='my-10'>
@@ -74,7 +76,7 @@ const Home = () => {
                         <p className='md:text-4xl text-2xl font-bold ml-5 text-center' style={{ color: '#83BD75' }}>Simple Order Process</p>
                     </div>
                     <div className='md:w-1/2 w-4/5 border-l-4 border-gray-400 pl-5'>
-                        <p className='text-gray-600 text-sm'>If you are going to hire me for 1 or 2 days and also if you want to ensure then please contact/order us via website also you can call me in my whatsapp</p>
+                        <p className='text-gray-600 text-sm'>If you are going to hire me for 1 or 2 days and also if you want to ensure then please order your selected service in website. And also you can contact me through whatsapp.</p>
                     </div>
                 </div>
                 <div className='w-4/5 mx-auto lg:grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>

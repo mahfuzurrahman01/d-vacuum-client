@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
@@ -16,7 +17,12 @@ const ServiceRow = ({ service }) => {
 
                 </div>
                 <div>
-                    <img src={picture} alt="cleaning-services" className="object-cover w-full mb-4 h-60 sm:h-96  bg-gray-500" />
+                    <PhotoProvider speed={() => 800}
+                        easing={(type) => (type === 2 ? 'cubic-bezier(0.36, 0, 0.66, -0.56)' : 'cubic-bezier(0.34, 1.56, 0.64, 1)')}>
+                        <PhotoView src={picture}>
+                            <img src={picture} alt="cleaning-services" className="object-cover w-full mb-4 h-60 sm:h-96  bg-gray-500" />
+                        </PhotoView>
+                    </PhotoProvider>
                     <h2 className="mb-1 text-xl font-semibold">{name}</h2>
                     <p className="text-sm  text-gray-400">{about.slice(0, 100)}...<Link to={`/service/${_id}`} className='text-xs text-green-600 font-semibold'>read more</Link></p>
                 </div>

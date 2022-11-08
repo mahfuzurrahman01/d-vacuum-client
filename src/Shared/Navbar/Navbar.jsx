@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FiPhoneCall } from 'react-icons/fi'
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 const Navbar = () => {
@@ -15,6 +15,7 @@ const Navbar = () => {
                             <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/home'>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/services'>Services</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/pricing'>Pricing</NavLink></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li>
                         </ul>
                     </div>
                     <div className='flex items-end'>
@@ -27,13 +28,13 @@ const Navbar = () => {
                         <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/home'>Home</NavLink></li>
                         <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/services'>Services</NavLink></li>
                         <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/pricing'>Pricing</NavLink></li>
+                        <li><NavLink className={({ isActive }) => isActive ? 'text-lg font-semibold text-green-600' : 'text-lg font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end text-green-600">
-                    <div className='flex items-center gap-2 text-md border py-1 px-3 border-green-600'>
-                        <FiPhoneCall></FiPhoneCall>
-                        <p>+8834256</p>
-                    </div>
+                    <Link to='/register'><div className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>
+                        <p>Register</p>
+                    </div></Link>
                 </div>
             </div>
         </div>
