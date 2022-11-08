@@ -10,7 +10,7 @@ const Register = () => {
         <div className='w-1/4 my-16 mx-auto'>
             <div className='flex justify-between items-center'>
               
-                    <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
+                    <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
                         <Link to='/login'>
                             <span className="relative">
                                 <input id="Toggle1" type="checkbox" className="hidden peer" />
