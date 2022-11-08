@@ -22,9 +22,8 @@ const Register = () => {
 
     Example('Register')
     return (
-        <div className='w-1/4 my-16 mx-auto'>
+        <div className='lg:w-1/4 md:w-1/2 w-11/12 my-16 mx-auto'>
             <div className='flex justify-between items-center'>
-
                 <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
                     <Link to='/login'>
                         <span className="relative">

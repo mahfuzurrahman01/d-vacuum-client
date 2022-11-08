@@ -19,7 +19,7 @@ const Login = () => {
     }
     Example('Login')
     return (
-        <div className='w-1/4 my-16 mx-auto'>
+        <div className='lg:w-1/4 md:w-1/2 w-full my-16 mx-auto'>
             <div className='flex justify-between items-center w-11/12 mx-auto'>
                 <div>
                     <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-100">
