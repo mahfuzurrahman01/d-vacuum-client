@@ -11,7 +11,7 @@ const Home = () => {
 
     const services = useLoaderData();
     //title setting with utilities function
-    Example('D-Home')
+    Example('Home')
 
     return (
         <div>

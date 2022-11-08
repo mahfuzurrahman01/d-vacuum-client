@@ -5,8 +5,10 @@ import image from '../../assets/cover/services_cover.jpg'
 import Example from '../../utilities/title';
 import ServiceRow from './ServiceRow';
 const Services = () => {
+
     const services = useLoaderData()
-    Example('D-Services')
+    
+    Example('Services')
     useEffect(() => {
         AOS.init();
     }, [])
