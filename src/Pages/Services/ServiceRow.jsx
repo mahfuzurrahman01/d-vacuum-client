@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaStar } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
+
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 const ServiceRow = ({ service }) => {
     console.log(service)
     const { _id, name, price, picture, about, rating } = service;
-    useEffect(() => {
-        AOS.init();
-    }, [])
+   
     return (
-        <div data-aos='fade-left'>
+        <div>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden shadow-md  bg-slate-100  text-gray-800" >
                 <div className="flex justify-between items-center">
                     <img alt="" src={logo} className="object-cover w-12 h-12 rounded-full shadow  bg-gray-500" />

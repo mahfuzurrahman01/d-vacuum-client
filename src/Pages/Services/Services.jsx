@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import AOS from 'aos';
 import image from '../../assets/cover/services_cover.jpg'
 import Example from '../../utilities/title';
 import ServiceRow from './ServiceRow';
 const Services = () => {
     const services = useLoaderData()
     Example('D-Services')
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <div>
             <div className='relative'>
@@ -24,7 +28,7 @@ const Services = () => {
                     <p className='text-gray-600 text-sm'>Listening to my customers and providing a consistently high quality of service in a cost-effective manner is how I’ve work with this sector back in 2020 to what D Vacuum is today: a cleaning operation of more than 100 professionals taking care of two million square feet of space throughout Metropolitan Boston and Southeastern Massachusetts.</p>
                 </div>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:w-4/5 w-full  mx-auto lg:my-10 md:my-7 my-5 gap-5 relative'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:w-4/5 w-full  mx-auto lg:my-10 md:my-7 my-5 gap-5'data-aos='fade-up-right'>
                 {
                     services.map(service => <ServiceRow key={service._id} service={service}></ServiceRow>)
                 }
