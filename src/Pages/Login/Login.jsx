@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import Example from '../../utilities/title';
 
 const Login = () => {
-  
-   
- 
+
     Example('Login')
     return (
         <div className='w-1/4 my-16 mx-auto'>

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 const ServiceRow = ({ service }) => {
-    console.log(service)
     const { _id, name, price, picture, about, rating } = service;
 
     return (
