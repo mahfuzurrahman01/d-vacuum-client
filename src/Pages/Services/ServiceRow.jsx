@@ -6,9 +6,9 @@ import logo from '../../assets/logo/H Black and white Fashion or Design studio l
 const ServiceRow = ({ service }) => {
     console.log(service)
     const { _id, name, price, picture, about, rating } = service;
-   
+
     return (
-        <div>
+        <div data-aos='fade-up-right' className='w-11/12 mx-auto'>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden shadow-md  bg-slate-100  text-gray-800" >
                 <div className="flex justify-between items-center">
                     <img alt="" src={logo} className="object-cover w-12 h-12 rounded-full shadow  bg-gray-500" />

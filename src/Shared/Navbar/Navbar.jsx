@@ -5,7 +5,7 @@ import logo from '../../assets/logo/H Black and white Fashion or Design studio l
 const Navbar = () => {
     return (
         <div>
-            <div className="navbar bg-white w-4/5 mx-auto" data-theme='emerald' >
+            <div className="navbar bg-white md:w-4/5 w-full mx-auto" data-theme='emerald' >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
