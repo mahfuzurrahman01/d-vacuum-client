@@ -14,7 +14,8 @@ const Register = () => {
         console.log(name, photourl, email, password)
         createUser(email, password)
             .then(result => {
-                console.log(result)
+                const user = result.user;
+                console.log(user)
             })
             .catch(err => console.error(err.massage))
     }

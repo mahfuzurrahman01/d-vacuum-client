@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Example from '../../utilities/title';
 
 const Login = () => {
-
+    const { logInwithEmailandPassword } = useContext(AuthContext);
+    const loginHandle = (event) => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        logInwithEmailandPassword(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(err => console.log(err.massage))
+    }
     Example('Login')
     return (
         <div className='w-1/4 my-16 mx-auto'>
@@ -23,7 +36,7 @@ const Login = () => {
             </div>
             <div className='w-11/12 mx-auto bg-slate-100 shadow-lg p-5' >
                 <div className="flex items-center justify-center text-center bg-slate-100 bg-opacity-60 text-gray-100">
-                    <form noValidate="" action="" className="flex flex-col w-full p-5 rounded text-gray-100 ng-untouched ng-pristine ng-valid">
+                    <form onSubmit={loginHandle} noValidate="" action="" className="flex flex-col w-full p-5 rounded text-gray-100 ng-untouched ng-pristine ng-valid">
                         <input id="email" placeholder='Your email' type="email" name='email' className="flex items-center h-10 text-xs px-4 mt-2 focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600" />
 
                         <input id="password" name='password' placeholder='Password' type="password" className="flex items-center h-10 text-xs px-4 mt-2 focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600" />
