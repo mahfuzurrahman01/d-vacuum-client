@@ -2,8 +2,8 @@ import React from 'react';
 import image from '../../assets/cover/pexels-anete-lusina-4792771.jpg'
 import 'aos/dist/aos.css';
 import { BiSelectMultiple } from 'react-icons/bi'
-import {SlCalender} from 'react-icons/sl'
-import {MdGppGood} from 'react-icons/md'
+import { SlCalender } from 'react-icons/sl'
+import { MdGppGood } from 'react-icons/md'
 import { Link, useLoaderData } from 'react-router-dom';
 import ServiceRow from '../Services/ServiceRow';
 import Example from '../../utilities/title';
@@ -21,8 +21,8 @@ const Home = () => {
                     <div className=' flex lg:flex-col flex-row lg:gap-0 md:gap-3 gap-5 justify-center w-full' data-aos='fade-left'>
                         <p className='text-xs text-green-600 md:block hidden'>GUARANTEED</p>
                         <div>
-                        <h1 className='lg:text-4xl md:text-3xl text-md font-bold text-white'>Professional cleaning service for your home</h1>
-                        <button className='text-white px-1 md:hidden block' style={{ backgroundColor: '#83BD75' }}><Link to='/services'>Book Now!</Link></button>
+                            <h1 className='lg:text-4xl md:text-3xl text-md font-bold text-white'>Professional cleaning service for your home</h1>
+                            <button className='text-white px-1 md:hidden block' style={{ backgroundColor: '#83BD75' }}><Link to='/services'>Book Now!</Link></button>
                         </div>
                         <p className='text-gray-300 text-xs md:block hidden'>Hey there, I'm Nick Jhonathen . Its been 2 years I'm providing cleaning services in this area .And i love to call my service D Vacuum.D Vacuum is committed to creating a clean and healthy environment for you and your family. In addition to our exceptional routine cleaning, enhanced disinfection services are available for your home to help ensure your family’s wellness.</p>
                         <p className='text-gray-300 text-xs md:hidden bolck'>Hey there, I'm Nick Jhonathen . Its been 2 years I'm providing cleaning services in this area .And i love to call my service D Vacuum.D Vacuum is committed to creating a clean and healthy environment for you and your family.</p>
@@ -49,11 +49,11 @@ const Home = () => {
             </div>
             <div>
                 {/* service section start from here  */}
-                <div className='w-4/6 p-5 mx-auto flex items-center gap-10 justify-center my-5'>
-                    <div className='w-1/3'>
-                        <p className='text-4xl font-bold ml-5' style={{ color: '#83BD75' }}>Complete and quick cleaning services</p>
+                <div className='lg:w-4/5 md:w-11/12 w-full mx-auto flex md:flex-row flex-col items-center gap-10 justify-center my-5'>
+                    <div className='lg:w-1/3 md:w-1/2 w-full'>
+                        <p className='lg:text-4xl md:text-2xl text-xl font-bold ml-5' style={{ color: '#83BD75' }}>Complete and quick cleaning services</p>
                     </div>
-                    <div className='w-1/2 border-l-4   border-gray-400 pl-5'>
+                    <div className='lg:w-1/2 w-4/5 border-l-4 border-gray-800 pl-5'>
                         <p className='text-gray-600 text-sm'>Listening to my customers and providing a consistently high quality of service in a cost-effective manner is how I’ve work with this sector back in 2020 to what D Vacuum is today: a cleaning operation of more than 100 professionals taking care of two million square feet of space throughout Metropolitan Boston and Southeastern Massachusetts.</p>
                     </div>
                 </div>
@@ -69,19 +69,19 @@ const Home = () => {
             </div>
             {/* how to order  */}
             <section className='my-10'>
-                <div className='w-4/6 p-5 mx-auto flex items-center gap-10 justify-center my-5' data-aos='fade-left'>
-                    <div className='w-1/3'>
-                        <p className='text-4xl font-bold ml-5' style={{ color: '#83BD75' }}>Simple Order Process</p>
+                <div className='lg:w-4/6 w-full p-5 mx-auto flex md:flex-row flex-col items-center gap-10 justify-center my-5' data-aos='fade-left'>
+                    <div className='md:w-1/3 w-full'>
+                        <p className='md:text-4xl text-2xl font-bold ml-5 text-center' style={{ color: '#83BD75' }}>Simple Order Process</p>
                     </div>
-                    <div className='w-1/2 border-l-4 border-gray-400 pl-5'>
+                    <div className='md:w-1/2 w-4/5 border-l-4 border-gray-400 pl-5'>
                         <p className='text-gray-600 text-sm'>If you are going to hire me for 1 or 2 days and also if you want to ensure then please contact/order us via website also you can call me in my whatsapp</p>
                     </div>
                 </div>
-                <div className='w-4/5 mx-auto grid grid-cols-3 gap-5'>
+                <div className='w-4/5 mx-auto lg:grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                     <div className='border-green-600  bg-slate-100 flex flex-col gap-y-2 p-5' data-aos='fade-left'>
                         <div className='flex justify-between'>
                             <p className='font-bold text-5xl text-gray-300'>01</p>
-                            <p><BiSelectMultiple className=' w-12 h-12'style={{ color: '#83BD75' }}></BiSelectMultiple></p>
+                            <p><BiSelectMultiple className=' w-12 h-12' style={{ color: '#83BD75' }}></BiSelectMultiple></p>
                         </div>
                         <p className='text-2xl text-center font-semibold text-gray-400'>Select service</p>
                         <p className='text-gray-600 text-sm'>First You have to goto the service page and then choose which service you want then simply click the service and if you wants to know about this service then click on the details button.</p>
@@ -89,15 +89,15 @@ const Home = () => {
                     <div className='border-green-600  bg-slate-100 flex flex-col gap-y-2 p-5' data-aos='fade-down'>
                         <div className='flex justify-between'>
                             <p className='font-bold text-5xl text-gray-300'>02</p>
-                            <p><SlCalender className=' w-12 h-12'style={{ color: '#83BD75' }}></SlCalender></p>
+                            <p><SlCalender className=' w-12 h-12' style={{ color: '#83BD75' }}></SlCalender></p>
                         </div>
                         <p className='text-2xl text-center font-semibold text-gray-400'>Pick a date</p>
                         <p className='text-gray-600 text-sm'>After selecting your service you have to confirm it but before confirmation you have to set the date so pick a date which date you want to get the service .</p>
                     </div>
-                    <div className='border-green-600  bg-slate-100 flex flex-col gap-y-2 p-5'data-aos='fade-right'>
+                    <div className='border-green-600  bg-slate-100 flex flex-col gap-y-2 p-5' data-aos='fade-right'>
                         <div className='flex justify-between'>
                             <p className='font-bold text-5xl text-gray-300'>03</p>
-                            <p><MdGppGood className=' w-12 h-12'style={{ color: '#83BD75' }}></MdGppGood></p>
+                            <p><MdGppGood className=' w-12 h-12' style={{ color: '#83BD75' }}></MdGppGood></p>
                         </div>
                         <p className='text-2xl text-center font-semibold text-gray-400'>Getting things done!</p>
                         <p className='text-gray-600 text-sm'>Then you'r done with your online order now all i have to do response you with a text massage that your order is confirmed then just wait to see the clean work and of course don't forgot to give me review about my work</p>
@@ -110,7 +110,7 @@ const Home = () => {
                 <section className="p-4 lg:p-8   bg-gray-50   text-gray-100">
                     <div className="container mx-auto space-y-12">
                         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row" data-aos='fade-right'>
-                            <img src="https://images.pexels.com/photos/3712597/pexels-photo-3712597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="h-80   bg-gray-500 aspect-video" />
+                            <img src="https://images.pexels.com/photos/3712597/pexels-photo-3712597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="lg:h-80 h-64   bg-gray-500 aspect-video" />
                             <div className="flex flex-col justify-center flex-1 p-6 bg-slate-200">
                                 <span className="text-xs uppercase   text-green-600">Join, it's free</span>
                                 <h3 className="text-3xl font-bold text-gray-800">OUR SERVICES, YOUR SCHEDULE</h3>
@@ -118,7 +118,7 @@ const Home = () => {
                                 <button type="button" className="self-start  py-1 px-4 text-gray-100 font-semibold text-sm" style={{ backgroundColor: '#83BD75' }}>Call Now</button>
                             </div>
                         </div>
-                        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse"data-aos='fade-left'>
+                        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse" data-aos='fade-left'>
                             <img src="https://images.pexels.com/photos/380768/pexels-photo-380768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="h-80 bg-gray-500 aspect-video" />
                             <div className="flex flex-col justify-center flex-1 p-6 bg-slate-200">
                                 <span className="text-xs uppercase text-green-600">Join, it's free</span>
