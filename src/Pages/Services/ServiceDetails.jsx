@@ -43,12 +43,12 @@ const ServiceDetails = () => {
 
         form.reset()
     }
-
-    fetch('http://localhost:5000/comments')
+    fetch(`http://localhost:5000/comments/${_id}`)
         .then(res => res.json())
-        .then(data => setReviews(data))
-
-
+        .then(data => {
+            setReviews(data)
+            return;
+        })
     return (
         <div >
             <div data-aos='fade-left' className='lg:w-4/5 w-full mx-auto flex lg:flex-row flex-col gap-10 my-10 items-center'>
@@ -91,7 +91,7 @@ const ServiceDetails = () => {
                 </div>
                 <div className='lg:w-1/2 w-11/12'>
                     {/* reviews are coming soon her  */}
-                    <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 bg-slate-200 text-gray-800" data-aos='fade-right'>
+                    <div className="flex flex-col max-w-3xl mx-auto p-6 space-y-4 sm:p-10 bg-slate-200 text-gray-800" data-aos='fade-right'>
                         <h2 className="text-xl font-semibold">Client Reviews</h2>
                         <ul className="flex flex-col gap-y-2 divide-gray-700">
                             {
