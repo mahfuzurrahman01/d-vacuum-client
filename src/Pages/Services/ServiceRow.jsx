@@ -8,7 +8,7 @@ const ServiceRow = ({ service }) => {
     const { _id, name, price, picture, about, rating } = service;
 
     return (
-        <div data-aos='fade-up-right' className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto'>
             <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden shadow-md  bg-slate-100  text-gray-800" >
                 <div className="flex justify-between items-center">
                     <img alt="" src={logo} className="object-cover w-12 h-12 rounded-full shadow  bg-gray-500" />
