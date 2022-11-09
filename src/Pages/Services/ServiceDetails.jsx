@@ -44,11 +44,10 @@ const ServiceDetails = () => {
         form.reset()
     }
 
-    useEffect(() => {
-        fetch('http://localhost:5000/comments')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+    fetch('http://localhost:5000/comments')
+        .then(res => res.json())
+        .then(data => setReviews(data))
+
 
     return (
         <div >
