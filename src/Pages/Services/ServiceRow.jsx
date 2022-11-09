@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaStar } from 'react-icons/fa'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const ServiceRow = ({ service }) => {
+    const { loading } = useContext(AuthContext)
+    console.log(loading)
     const { _id, name, price, picture, about, rating } = service;
-
+    if (loading) {
+        return <div className='flex items-center justify-center space-x-2 w-4/5 mx-auto my-16'><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-green-600"></div></div>
+    }
     return (
         <div className='w-11/12 mx-auto'>
             <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden shadow-md  bg-slate-100  text-gray-800" >

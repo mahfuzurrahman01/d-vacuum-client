@@ -1,17 +1,30 @@
-import React, { useEffect } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
 import AOS from 'aos';
 import image from '../../assets/cover/services_cover.jpg'
 import Example from '../../utilities/title';
 import ServiceRow from './ServiceRow';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Services = () => {
+    const { loading, setLoading } = useContext(AuthContext);
 
-    const services = useLoaderData()
-    
+    const [services, setServices] = useState([])
+    useEffect(() => {
+        setLoading(true)
+        fetch('http://localhost:5000/services?limit=6')
+            .then(res => res.json())
+            .then(data => {
+                setLoading(false)
+                setServices(data)
+            })
+    }, [setLoading])
     Example('Services')
     useEffect(() => {
         AOS.init();
     }, [])
+
+    if (loading) {
+        return <div className='flex items-center justify-center space-x-2 w-4/5 mx-auto my-16'><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-green-600"></div></div>
+    }
     return (
         <div>
             <div className='relative'>
@@ -24,7 +37,7 @@ const Services = () => {
             </div>
             <div className='lg:w-4/5 md:w-11/12 w-full mx-auto flex md:flex-row flex-col items-center gap-10 justify-center my-5'>
                 <div className='lg:w-1/3 md:w-1/2 w-full'>
-                    <p className='lg:text-4xl md:text-2xl text-xl font-bold ml-5' style={{color:'#83BD75'}}>Complete and quick cleaning services</p>
+                    <p className='lg:text-4xl md:text-2xl text-xl font-bold ml-5' style={{ color: '#83BD75' }}>Complete and quick cleaning services</p>
                 </div>
                 <div className='lg:w-1/2 w-4/5 border-l-4 border-gray-800 pl-5'>
                     <p className='text-gray-600 text-sm'>Listening to my customers and providing a consistently high quality of service in a cost-effective manner is how I’ve work with this sector back in 2020 to what D Vacuum is today: a cleaning operation of more than 100 professionals taking care of two million square feet of space throughout Metropolitan Boston and Southeastern Massachusetts.</p>

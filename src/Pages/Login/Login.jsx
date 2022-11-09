@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Example from '../../utilities/title';
 
 const Login = () => {
+    const { logInwithEmailandPassword, loading } = useContext(AuthContext);
+
     const navigate = useNavigate()
-    const { logInwithEmailandPassword } = useContext(AuthContext);
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
     const loginHandle = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -15,11 +19,14 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(err => console.log(err.massage))
     }
     Example('Login')
+    if (loading) {
+        return <div className='flex items-center justify-center space-x-2 w-4/5 mx-auto my-16'><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-green-600"></div></div>
+    }
     return (
         <div className='lg:w-1/4 md:w-1/2 w-full my-16 mx-auto'>
             <div className='flex justify-between items-center w-11/12 mx-auto'>

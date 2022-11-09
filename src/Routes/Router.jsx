@@ -1,3 +1,4 @@
+
 import Main from "../Layout/Main";
 import AddService from "../Pages/AddService/AddService";
 import Blogs from "../Pages/Blogs/Blogs";
@@ -8,6 +9,7 @@ import Pricing from "../Pages/Pricing/Pricing";
 import Register from "../Pages/Register/Register";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Services from "../Pages/Services/Services";
+import PrivateRoute from "../Private/PrivateRoute";
 import Error from "../Shared/Error/Error";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -30,7 +32,6 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                loader: () => fetch('http://localhost:5000/services?limit=6'),
                 element: <Services></Services>
             },
             {
@@ -55,12 +56,12 @@ export const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path:'/my_review',
-                element:<MyReviews></MyReviews>
+                path: '/my_review',
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
-                path:'/add_service',
-                element:<AddService></AddService>
+                path: '/add_service',
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             }
         ]
     }

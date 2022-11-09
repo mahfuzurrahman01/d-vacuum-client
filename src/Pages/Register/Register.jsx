@@ -4,7 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Example from '../../utilities/title';
 const Register = () => {
     const navigate = useNavigate()
-    const { createUser, updateUser } = useContext(AuthContext);
+    const { createUser, updateUser,loading } = useContext(AuthContext);
     const signUpHandle = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -25,6 +25,10 @@ const Register = () => {
     }
 
     Example('Register')
+
+    if (loading) {
+        return <div className='flex items-center justify-center space-x-2 w-4/5 mx-auto my-16'><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-green-600"></div></div>
+    }
     return (
         <div className='lg:w-1/4 md:w-1/2 w-11/12 my-16 mx-auto'>
             <div className='flex justify-between items-center'>
