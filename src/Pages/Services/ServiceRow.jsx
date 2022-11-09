@@ -13,7 +13,7 @@ const ServiceRow = ({ service }) => {
         return <div className='flex items-center justify-center space-x-2 w-4/5 mx-auto my-16'><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-green-600"></div></div>
     }
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto' data-aos="fade-right">
             <div className="flex flex-col w-full p-6 space-y-6 overflow-hidden shadow-md  bg-slate-100  text-gray-800" >
                 <div className="flex justify-between items-center">
                     <img alt="" src={logo} className="object-cover w-12 h-12 rounded-full shadow  bg-gray-500" />

@@ -4,7 +4,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Example from '../../utilities/title';
 const Register = () => {
     const navigate = useNavigate()
-    const { createUser, updateUser,loading } = useContext(AuthContext);
+    const { createUser, updateUser, loading } = useContext(AuthContext);
     const signUpHandle = (event) => {
         event.preventDefault()
         const form = event.target;
@@ -20,6 +20,7 @@ const Register = () => {
                 updateUser(name, photourl)
                     .then(() => { })
                     .catch(() => { })
+                form.reset()
             })
             .catch(err => console.error(err.massage))
     }

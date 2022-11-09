@@ -20,6 +20,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 navigate(from, { replace: true });
+                form.reset()
             })
             .catch(err => console.log(err.massage))
     }

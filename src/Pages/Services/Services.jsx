@@ -27,9 +27,9 @@ const Services = () => {
     }
     return (
         <div>
-            <div className='relative'>
-                <img src={image} alt="" />
-                <div className='absolute lg:w-1/2 md:3/4 w-3/4 bg-white bg-opacity-30 lg:left-1/4 md:left-28 left-10 lg:top-1/3 md:top-1/3 top-3 lg:p-5 md:p-3 p-2'>
+            <div>
+                <img src={image} alt=""/>
+                <div className='absolute lg:w-1/2 md:3/4 w-3/4 bg-white bg-opacity-30 lg:left-1/4 md:left-28 left-10 lg:top-1/3 md:top-36 top-20 lg:p-5 md:p-3 p-2'>
                     <p className='text-green-600 text-sm font-bold lg:block hidden'>WHAT I DO ?</p>
                     <p className='lg:text-4xl text-md font-bold text-white'>Services</p>
                     <p className='text-gray-200 lg:text-lg text-xs'>When you trust your space to the team at D Vacuum®, you can rest easy knowing your home is in great hands. You deserve to feel confident knowing you’ll receive consistently flawless results from friendly, trustworthy professionals.</p>
