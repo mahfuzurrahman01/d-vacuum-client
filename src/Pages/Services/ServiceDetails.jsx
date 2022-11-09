@@ -11,6 +11,7 @@ import ReviewsCard from '../../Shared/Reviews/ReviewsCard';
 const ServiceDetails = () => {
     // title 
     Example('Details')
+
     // set the reviews in state
     const [reviews, setReviews] = useState([])
     const location = useLocation()
@@ -18,6 +19,16 @@ const ServiceDetails = () => {
     const service = useLoaderData()
     const { _id, name, price, picture, about, rating } = service;
     //title
+    useEffect(() => {
+        fetch(`http://localhost:5000/comments/${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data)
+
+            })
+
+    }, [_id])
+
     const reviewSubmitHandler = event => {
         event.preventDefault()
         const form = event.target;
@@ -39,16 +50,15 @@ const ServiceDetails = () => {
             body: JSON.stringify(reviewData)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                const newReviews = [...reviews, reviewData]
+                setReviews(newReviews)
+            })
 
         form.reset()
     }
-    fetch(`http://localhost:5000/comments/${_id}`)
-        .then(res => res.json())
-        .then(data => {
-            setReviews(data)
-            return;
-        })
+
     return (
         <div >
             <div data-aos='fade-left' className='lg:w-4/5 w-full mx-auto flex lg:flex-row flex-col gap-10 my-10 items-center'>
