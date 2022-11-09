@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { MdRateReview } from 'react-icons/md'
 import { Link, useLoaderData, useLocation } from 'react-router-dom';
@@ -7,8 +7,12 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 import Example from '../../utilities/title';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import ReviewsCard from '../../Shared/Reviews/ReviewsCard';
 const ServiceDetails = () => {
-
+    // title 
+    Example('Details')
+    // set the reviews in state
+    const [reviews, setReviews] = useState([])
     const location = useLocation()
     const { user } = useContext(AuthContext);
     const service = useLoaderData()
@@ -16,6 +20,7 @@ const ServiceDetails = () => {
     //title
     const reviewSubmitHandler = event => {
         event.preventDefault()
+        const form = event.target;
         const comment = event.target.comment.value;
 
         const reviewData = {
@@ -35,9 +40,15 @@ const ServiceDetails = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
+
+        form.reset()
     }
 
-    Example('Details')
+    useEffect(() => {
+        fetch('http://localhost:5000/comments')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
 
     return (
         <div >
@@ -84,26 +95,9 @@ const ServiceDetails = () => {
                     <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 bg-slate-200 text-gray-800" data-aos='fade-right'>
                         <h2 className="text-xl font-semibold">Client Reviews</h2>
                         <ul className="flex flex-col gap-y-2 divide-gray-700">
-                            <li className="flex flex-col p-4 sm:flex-row sm:justify-between bg-gray-100">
-                                <div className="flex w-full space-x-2 sm:space-x-4">
-                                    <img className="flex-shrink-0 object-cover w-20 h-20 border-transparent rounded outline-none sm:w-28 sm:h-28 bg-gray-500" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Polaroid camera" />
-                                    <div className="flex flex-col justify-between w-full">
-                                        <div className="flex justify-between w-full space-x-2">
-                                            <div className="space-y-1">
-                                                <h3 className="text-lg font-semibold  sm:pr-8">Mahfuz</h3>
-                                            </div>
-                                            <div className="text-right">
-                                                <p className="text-lg font-semibold">4.5</p>
-                                                <p className='text-xs text-gray-500'>12 min ago</p>
-                                            </div>
-                                        </div>
-                                        <div className="">
-                                            <p className='text-xs'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, vitae quaerat sunt at earum veniam in aut tempora eum. Culpa officia dolorum autem? Reiciendis expedita sed explicabo commodi quae! Reprehenderit.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
+                            {
+                                reviews.map(review => <ReviewsCard key={review._id} review={review}></ReviewsCard>)
+                            }
                         </ul>
                         <div>
                             {
