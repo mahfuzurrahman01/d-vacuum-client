@@ -23,9 +23,10 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
     //update current user
-    const updateUser = (name,photoUrl) => {
+    const updateUser = (name, photoUrl) => {
         updateProfile(auth.currentUser, {
-            displayName: `${name}` , photoURL: `${photoUrl}`})
+            displayName: `${name}`, photoURL: `${photoUrl}`
+        })
     }
     //on auth state change
     useEffect(() => {
@@ -37,7 +38,7 @@ const AuthProvider = ({ children }) => {
         return () => subscription()
     }, [])
 
-    const authInfo = { user, loading, createUser, logInwithEmailandPassword, logOut,updateUser,setLoading }
+    const authInfo = { user, loading, createUser, logInwithEmailandPassword, logOut, updateUser, setLoading }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

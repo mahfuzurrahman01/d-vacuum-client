@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { MdRateReview } from 'react-icons/md'
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 import Example from '../../utilities/title';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const ServiceDetails = () => {
+    const location = useLocation()
+    const { user } = useContext(AuthContext);
     const service = useLoaderData()
     const { _id, name, price, picture, about, rating } = service;
-
     //title
     Example('Details')
 
@@ -163,23 +166,15 @@ const ServiceDetails = () => {
                                 </div>
                             </li>
                         </ul>
-                        <div className="space-y-1 text-right">
-                            <p>Total amount:
-                                <span className="font-semibold">357 €</span>
-                            </p>
-                            <p className="text-sm text-gray-400">Not including taxes and shipping costs</p>
-                        </div>
-                        <div className="flex justify-end space-x-4">
-                            <button type="button" className="px-6 py-2 border rounded-md border-violet-400">Back
-                                <span className="sr-only sm:not-sr-only">to shop</span>
-                            </button>
-                            <button type="button" className="px-6 py-2 border rounded-md bg-violet-400 text-gray-900 border-violet-400">
-                                <span className="sr-only sm:not-sr-only">Continue to</span>Checkout
-                            </button>
+                        <div>
+                            {
+                                user?.email ? <div className='flex flex-col gap-y-2'><textarea className='h-20 p-2' placeholder='Please add a review about this service...' name='textarea'></textarea><button type='submit' className='text-white py-1 px-3 flex items-baseline gap-2 justify-center' style={{ backgroundColor: '#83BD75' }}>Submit<MdRateReview></MdRateReview></button></div> : <button className='text-white w-full py-1 px-3' style={{ backgroundColor: '#83BD75' }}><Link to='/login' state={{ from: location }} replace>Please login to add a review</Link></button>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };
