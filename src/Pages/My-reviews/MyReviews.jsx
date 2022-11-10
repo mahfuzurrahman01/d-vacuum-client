@@ -6,11 +6,14 @@ import MyReviewCard from './MyReviewCard';
 
 const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
-    console.log(reviews)
     const { user } = useContext(AuthContext);
     Example('My-review')
     useEffect(() => {
-        fetch(`http://localhost:5000/comment?email=${user?.email}`)
+        fetch(`http://localhost:5000/comment?email=${user?.email}`, {
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email])

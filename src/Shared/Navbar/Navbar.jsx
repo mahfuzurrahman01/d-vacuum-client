@@ -5,11 +5,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import sweetAlert from '../../utilities/Alert';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user)
     const logoutHandle = () => {
         logOut()
             .then(() => {
-                sweetAlert('warning', 'user logged out')
+                alert('logged out successfully')
             })
             .catch(err => {
                 sweetAlert('error', err.massage)
