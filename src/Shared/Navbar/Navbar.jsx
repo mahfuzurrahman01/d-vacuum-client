@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end text-green-600">
                     {
-                        user?.email ? <button onClick={logoutHandle} className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>Logout</button> : <Link to='/register'><div className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>
+                        user?.email ? <div className='flex gap-1 items-center'><img className='w-9 h-9 rounded-full' src={user?.photoURL} alt="" /><button onClick={logoutHandle} className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>Logout</button></div> : <Link to='/register'><div className='cursor-pointer hover:bg-green-500 duration-200 hover:text-white text-md border py-1 px-3 border-green-600'>
                             <p>Register</p>
                         </div></Link>
                     }

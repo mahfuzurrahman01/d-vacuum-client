@@ -54,7 +54,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                const newReviews = [...reviews, reviewData]
+                const newReviews = [ reviewData,...reviews]
                 setReviews(newReviews)
             })
 
