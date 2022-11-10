@@ -24,11 +24,15 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/my_review'>My review</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/add_service'>Add Service</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li>
+                            {
+                                user?.email ? <><li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/my_review'>My review</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/add_service'>Add Service</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li></> : <><li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
+                                    <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li></>
+                            }
 
                         </ul>
                     </div>
@@ -39,11 +43,15 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0 gap-4">
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/my_review'>My review</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/add_service'>Add Service</NavLink></li>
-                        <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li>
+                        {
+                            user?.email ? <><li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/my_review'>My review</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/add_service'>Add Service</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li></> : <><li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/home'>Home</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/services'>Services</NavLink></li>
+                                <li><NavLink className={({ isActive }) => isActive ? 'text-md font-semibold text-green-600' : 'text-md font-light text-gray-700'} to='/blogs'>Blogs</NavLink></li></>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end text-green-600">

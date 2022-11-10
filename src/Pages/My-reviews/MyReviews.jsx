@@ -25,12 +25,14 @@ const MyReviews = () => {
                 }
             </div>
             <div className="flex flex-col md:max-w-2xl w-11/12 mx-auto my-10 p-6 space-y-4 sm:p-10 bg-slate-100 text-gray-800">
-                <h2 className="text-xl font-semibold text-gray-400">Your reviews</h2>
-                <ul className="flex flex-col gap-y-4">
-                    {
-                        reviews.map(review => <MyReviewCard key={review._id} review={review}></MyReviewCard>)
-                    }
-                </ul>
+                {
+                    reviews.length === 0 || <><h2 className="text-xl font-semibold text-gray-400">Your reviews</h2>
+                        <ul className="flex flex-col gap-y-4">
+                            {
+                                reviews.map(review => <MyReviewCard key={review._id} review={review}></MyReviewCard>)
+                            }
+                        </ul></>
+                }
             </div>
         </div>
     );
