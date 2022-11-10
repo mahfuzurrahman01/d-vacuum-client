@@ -12,6 +12,7 @@ const MyReviewCard = ({ review }) => {
             .then(data => {
                 console.log(data)
                 alert('deleted')
+                window.location.reload()
             })
     }
     return (
