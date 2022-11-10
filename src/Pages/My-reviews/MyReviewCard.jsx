@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const MyReviewCard = ({ review }) => {
     const { name, userName, picture, time, comment, _id } = review
@@ -19,15 +20,21 @@ const MyReviewCard = ({ review }) => {
     //update 
     const updateHandler = (event) => {
         event.preventDefault()
+
         const newReview = event.target.textarea.value;
         console.log(newReview)
-        fetch(`http://localhost:5000/review/${_id}`, {
+        fetch(`http://localhost:5000/update/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newReview)
+            body: JSON.stringify({ newReview: newReview })
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+
+            })
 
     }
     return (
@@ -82,7 +89,7 @@ const MyReviewCard = ({ review }) => {
 
                                 <form onSubmit={updateHandler} className="modal-box rounded-none text-gray-700 flex flex-col gap-2">
                                     <h3 className="font-bold text-lg text-gray-500">Edit here:</h3>
-                                    <textarea name='textarea' className='focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600 h-32'></textarea>
+                                    <textarea placeholder='Please edit your review...' name='textarea' className='focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600 h-32'></textarea>
                                     <div className="modal-action">
                                         <button type='submit' htmlFor="my-modal" className="text-white font-semibold px-3 py-1" style={{ backgroundColor: '#83BD75' }}>Update</button>
                                     </div>
