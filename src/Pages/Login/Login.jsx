@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import sweetAlert from '../../utilities/Alert';
 import Example from '../../utilities/title';
 
 const Login = () => {
@@ -23,12 +24,13 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 navigate(from, { replace: true });
+                sweetAlert('success', 'Sign In successfully')
                 form.reset()
             })
             .catch(err => {
                 setLoading(false)
                 console.log(err)
-                alert('error')
+                sweetAlert('error', err.messages)
             })
     }
     const googleHandler = () => {
@@ -37,11 +39,12 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 navigate(from, { replace: true });
+                sweetAlert('success', 'Sign In successfully')
             })
             .catch(err => {
                 setLoading(false)
                 console.log(err.massage)
-                alert('error')
+                sweetAlert('error', err.massage)
 
             })
     }

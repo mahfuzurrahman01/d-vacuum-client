@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import sweetAlert from '../../utilities/Alert';
 import Example from '../../utilities/title';
 const Register = () => {
     const navigate = useNavigate()
@@ -20,12 +21,12 @@ const Register = () => {
                 updattingUser(name, photourl)
                     .then(() => { form.reset() })
                     .catch(() => { })
-
+                sweetAlert('success', 'successfully sign in')
             })
             .catch(err => {
                 console.log(err)
                 setLoading(false)
-                alert('error')
+                sweetAlert('error', err.massage)
             })
     }
     const updattingUser = (name, photourl) => {

@@ -8,6 +8,7 @@ import logo from '../../assets/logo/H Black and white Fashion or Design studio l
 import Example from '../../utilities/title';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import ReviewsCard from '../../Shared/Reviews/ReviewsCard';
+import sweetAlert from '../../utilities/Alert';
 const ServiceDetails = () => {
     // title 
     Example('Details')
@@ -56,6 +57,7 @@ const ServiceDetails = () => {
                 console.log(data)
                 const newReviews = [ reviewData,...reviews]
                 setReviews(newReviews)
+                sweetAlert('success','Thank you!')
             })
 
         form.reset()

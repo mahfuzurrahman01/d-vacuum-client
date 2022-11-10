@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import sweetAlert from '../../utilities/Alert';
 import Example from '../../utilities/title';
 
 const AddService = () => {
@@ -30,7 +31,7 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                alert('service added')
+                sweetAlert('success','Service added successfully')
                 form.reset()
             })
 

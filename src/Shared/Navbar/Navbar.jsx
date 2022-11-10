@@ -2,15 +2,18 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/H Black and white Fashion or Design studio logo.png'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import sweetAlert from '../../utilities/Alert';
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     console.log(user)
     const logoutHandle = () => {
         logOut()
             .then(() => {
-                alert('logged out')
+                sweetAlert('warning', 'user logged out')
             })
-            .catch(err => console.log(err.massage))
+            .catch(err => {
+                sweetAlert('error', err.massage)
+            })
     }
     return (
         <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import sweetAlert from '../../utilities/Alert';
 
 const MyReviewCard = ({ review }) => {
     const { name, userName, picture, time, comment, _id } = review
@@ -12,7 +13,7 @@ const MyReviewCard = ({ review }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                alert('deleted')
+                sweetAlert('success', ('successfully deleted'))
                 window.location.reload()
             })
     }
@@ -33,7 +34,8 @@ const MyReviewCard = ({ review }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-
+                sweetAlert('success', 'updated review')
+                window.location.reload()
             })
 
     }
