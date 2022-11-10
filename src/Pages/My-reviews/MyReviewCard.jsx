@@ -15,6 +15,21 @@ const MyReviewCard = ({ review }) => {
                 window.location.reload()
             })
     }
+
+    //update 
+    const updateHandler = (event) => {
+        event.preventDefault()
+        const newReview = event.target.textarea.value;
+        console.log(newReview)
+        fetch(`http://localhost:5000/review/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newReview)
+        })
+
+    }
     return (
 
         <li className="flex flex-col p-3 sm:flex-row sm:justify-between bg-white">
@@ -45,10 +60,37 @@ const MyReviewCard = ({ review }) => {
                             </svg>
                             <span>Remove Review</span>
                         </button>
-                        <button type="button" className="bg-gray-200 flex items-center px-2 py-1 space-x-1 hover:text-green-600">
-                            <AiOutlineEdit></AiOutlineEdit>
-                            <span>Edit Review</span>
-                        </button>
+                        <div>
+                            {/* <label type="button" htmlFor="my-modal" className="bg-gray-200 flex items-center px-2 py-1 space-x-1 hover:text-green-600"><AiOutlineEdit></AiOutlineEdit> open modal</label>
+
+                            <input type="checkbox" id="my-modal" className="modal-toggle" />
+                            <div className="modal">
+                                <form className="modal-box bg-slate-100 rounded-none text-gray-700 flex flex-col gap-2">
+                                    <h3 className="font-bold text-lg text-gray-500">Edit here:</h3>
+                                    <textarea name='textarea' className='focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600 h-32'></textarea>
+                                    <div className="modal-action">
+                                        <label onClick={updateHandler} htmlFor="my-modal" className="text-white font-semibold px-3 py-1" style={{ backgroundColor: '#83BD75' }}>Update</label>
+                                    </div>
+                                </form>
+                            </div> */}
+                            {/* The button to open modal */}
+                            <label htmlFor="my-modal-4" className="bg-gray-200 flex items-center px-2 py-1 space-x-1 hover:text-green-600"> <AiOutlineEdit></AiOutlineEdit> Edit review</label>
+
+                            {/* Put this part before </body> tag */}
+                            <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+                            <label htmlFor="my-modal-4" className="modal cursor-pointer">
+
+                                <form onSubmit={updateHandler} className="modal-box rounded-none text-gray-700 flex flex-col gap-2">
+                                    <h3 className="font-bold text-lg text-gray-500">Edit here:</h3>
+                                    <textarea name='textarea' className='focus:outline-none focus:ring-2  text-gray-900 border-green-600 bg-gray-200 focus:ring-green-600 h-32'></textarea>
+                                    <div className="modal-action">
+                                        <button type='submit' htmlFor="my-modal" className="text-white font-semibold px-3 py-1" style={{ backgroundColor: '#83BD75' }}>Update</button>
+                                    </div>
+                                </form>
+
+                            </label>
+
+                        </div>
                     </div>
                 </div>
             </div>
