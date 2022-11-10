@@ -9,7 +9,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
     Example('My-review')
     useEffect(() => {
-        fetch(`http://localhost:5000/comment?email=${user?.email}`, {
+        fetch(`https://server-zeta-two.vercel.app/comment?email=${user?.email}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('token')}`
             }

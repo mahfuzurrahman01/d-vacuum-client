@@ -10,7 +10,7 @@ const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/services')
+        fetch('https://server-zeta-two.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
@@ -28,7 +28,7 @@ const Services = () => {
     return (
         <div>
             <div>
-                <img src={image} alt=""/>
+                <img src={image} alt="" />
                 <div className='absolute lg:w-1/2 md:3/4 w-3/4 bg-white bg-opacity-30 lg:left-1/4 md:left-28 left-10 lg:top-1/3 md:top-36 top-20 lg:p-5 md:p-3 p-2'>
                     <p className='text-green-600 text-sm font-bold lg:block hidden'>WHAT I DO ?</p>
                     <p className='lg:text-4xl text-md font-bold text-white'>Services</p>

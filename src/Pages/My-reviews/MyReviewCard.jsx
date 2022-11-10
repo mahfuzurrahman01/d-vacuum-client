@@ -7,7 +7,7 @@ const MyReviewCard = ({ review }) => {
     const { name, userName, picture, time, comment, _id } = review
 
     const deleteHandler = () => {
-        fetch(`http://localhost:5000/review/${_id}`, {
+        fetch(`https://server-zeta-two.vercel.app/review/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -24,7 +24,7 @@ const MyReviewCard = ({ review }) => {
 
         const newReview = event.target.textarea.value;
         console.log(newReview)
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://server-zeta-two.vercel.app/update/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const AddService = () => {
             about,
             rating
         }
-        fetch('http://localhost:5000/add_service', {
+        fetch('https://server-zeta-two.vercel.app/add_service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -31,7 +31,7 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                sweetAlert('success','Service added successfully')
+                sweetAlert('success', 'Service added successfully')
                 form.reset()
             })
 

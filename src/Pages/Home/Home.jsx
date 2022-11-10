@@ -24,7 +24,7 @@ const Home = () => {
                             <h1 className='lg:text-4xl md:text-3xl text-md font-bold text-white'>Professional cleaning service for your home</h1>
                             <button className='text-white px-1 md:hidden block' style={{ backgroundColor: '#83BD75' }}><Link to='/services'>Book Now!</Link></button>
                         </div>
-                        <p className='text-gray-300 text-xs md:block hidden'>Hey there, I'm Nick Jhonathen . Its been 2 years I'm providing cleaning services in this area .And i love to call my service D Vacuum.D Vacuum is committed to creating a clean and healthy environment for you and your family. In addition to our exceptional routine cleaning, enhanced disinfection services are available for your home to help ensure your family’s wellness.</p>
+                        <p className='text-gray-300 text-xs md:block hidden'>Hey there, I'm Nick Jhonathen . Its been 2 years I'm providing cleaning services in this area .And i love to call my service D Vacuum.D Vacuum is committed to creating a clean and healthy environment for you and your family. In addition to d vacuum exceptional routine cleaning, enhanced disinfection services are available for your home to help ensure your family’s wellness.</p>
                         <p className='text-gray-300 text-xs md:hidden bolck'>Hey there, I'm Nick Jhonathen . Its been 2 years I'm providing cleaning services in this area .And i love to call my service D Vacuum.D Vacuum is committed to creating a clean and healthy environment for you and your family.</p>
                     </div>
                     <div data-aos='fade-right' className='lg:block hidden'>
@@ -115,7 +115,7 @@ const Home = () => {
                             <img src="https://images.pexels.com/photos/3712597/pexels-photo-3712597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="lg:h-80 h-64   bg-gray-500 aspect-video" />
                             <div className="flex flex-col justify-center flex-1 p-6 bg-slate-200">
                                 <span className="text-xs uppercase   text-green-600">Join, it's free</span>
-                                <h3 className="text-3xl font-bold text-gray-800">OUR SERVICES, YOUR SCHEDULE</h3>
+                                <h3 className="text-3xl font-bold text-gray-800">MY SERVICES, YOUR SCHEDULE</h3>
                                 <p className="my-6   text-gray-500">I'll familiarize my self with your facility and then create a customized cleaning and disinfecting plan that perfectly accommodates your needs. I can schedule my cleaning services at a time and frequency that works best.</p>
                                 <button type="button" className="self-start  py-1 px-4 text-gray-100 font-semibold text-sm" style={{ backgroundColor: '#83BD75' }}>Call Now</button>
                             </div>

@@ -27,7 +27,7 @@ const Login = () => {
                 }
                 console.log(currentUser)
                 //   jwt token 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://server-zeta-two.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -54,12 +54,12 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                
+
                 console.log(user)
                 const currentUser = {
                     email: user.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://server-zeta-two.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

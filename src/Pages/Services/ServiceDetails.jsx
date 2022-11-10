@@ -21,7 +21,7 @@ const ServiceDetails = () => {
     const { _id, name, price, picture, about, rating } = service;
     //title
     useEffect(() => {
-        fetch(`http://localhost:5000/comments/${_id}`)
+        fetch(`https://server-zeta-two.vercel.app/comments/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -45,7 +45,7 @@ const ServiceDetails = () => {
             userPhoto: user.photoURL,
             time: new Date().getTime()
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://server-zeta-two.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,9 +55,9 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                const newReviews = [ reviewData,...reviews]
+                const newReviews = [reviewData, ...reviews]
                 setReviews(newReviews)
-                sweetAlert('success','Thank you!')
+                sweetAlert('success', 'Thank you!')
             })
 
         form.reset()

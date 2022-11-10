@@ -22,12 +22,12 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch('http://localhost:5000/services?limit=3'),
+                loader: () => fetch('https://server-zeta-two.vercel.app/services?limit=3'),
                 element: <Home></Home>
             },
             {
                 path: '/home',
-                loader: () => fetch('http://localhost:5000/services?limit=3'),
+                loader: () => fetch('https://server-zeta-two.vercel.app/services?limit=3'),
                 element: <Home></Home>
             },
             {
@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/service/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`),
+                loader: ({ params }) => fetch(`https://server-zeta-two.vercel.app/service/${params.id}`),
                 element: <ServiceDetails></ServiceDetails>
             },
             {
@@ -63,7 +63,7 @@ export const router = createBrowserRouter([
                 path: '/add_service',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
-           
+
         ]
     }
 ])
