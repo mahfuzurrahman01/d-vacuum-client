@@ -10,7 +10,7 @@ const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
         setLoading(true)
-        fetch('http://localhost:5000/services?limit=6')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setLoading(false)

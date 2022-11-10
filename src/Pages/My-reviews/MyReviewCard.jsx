@@ -3,7 +3,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 
 const MyReviewCard = ({ review }) => {
     console.log(review)
-    const { name, userName, picture, time, comment, _id } = review
+    const { name, userName, picture, time, comment, } = review
     return (
  
             <li className="flex flex-col p-3 sm:flex-row sm:justify-between bg-white">
