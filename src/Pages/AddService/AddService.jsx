@@ -63,7 +63,7 @@ const AddService = () => {
                                 <input id="rating" type="text" name='rating' placeholder="Service Rating" required className="block w-full p-2 focus:outline-none bg-white" />
                             </div>
                             <div>
-                                <textarea id="about" name='about' type="text" placeholder="Description" className="block w-full p-2 focus:outline-none bg-white"></textarea>
+                                <textarea id="about" name='about' type="text" placeholder="Description" required className="block w-full p-2 focus:outline-none bg-white"></textarea>
                             </div>
                             <div>
                                 <button type="submit" className="w-full px-4 py-2 font-semibold shadow text-white" style={{ backgroundColor: '#83BD75' }}>Add</button>
