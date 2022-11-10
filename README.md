@@ -1,6 +1,6 @@
-# [D-Vacuum](https://braintech-app.web.app/)
+# [D-Vacuum](https://d-vacuum-a11.web.app/)
 D-vacuum is a personal cleaning service agency. Which also offer online contact and booking.<br/>
-live link: 
+live link: https://d-vacuum-a11.web.app/
 
 ## Feature
 The client offers 6 services for user. And user can purchase any of them. here is also a details section when user click on the services details button it redirect them in a page where they can where there are two section one is the details of the selected service and other side will show the users review. there if the user login he will find a textarea where current user also add his review but if user not logged in yet then by clicking the add review button will redirect him to log in page.Then there also a route name my reviews where the current log in user will find his previous reviews.
@@ -28,4 +28,5 @@ I also use toast which are from SIETALERT2 and icons from REACT-ICONS
 also use react-images
 
 ## site live link
+https://d-vacuum-a11.web.app/
 

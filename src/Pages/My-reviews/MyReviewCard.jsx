@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiOutlineEdit } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 import sweetAlert from '../../utilities/Alert';
 
 const MyReviewCard = ({ review }) => {
