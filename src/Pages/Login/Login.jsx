@@ -7,7 +7,7 @@ const Login = () => {
     //title 
     Example('Login')
 
-    const { logInwithEmailandPassword, loading, googleLogin } = useContext(AuthContext);
+    const { logInwithEmailandPassword, loading, googleLogin, setLoading } = useContext(AuthContext);
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -25,7 +25,11 @@ const Login = () => {
                 navigate(from, { replace: true });
                 form.reset()
             })
-            .catch(err => console.log(err.massage))
+            .catch(err => {
+                setLoading(false)
+                console.log(err)
+                alert('error')
+            })
     }
     const googleHandler = () => {
         googleLogin()
@@ -34,7 +38,12 @@ const Login = () => {
                 console.log(user)
                 navigate(from, { replace: true });
             })
-            .catch(err => console.log(err.massage))
+            .catch(err => {
+                setLoading(false)
+                console.log(err.massage)
+                alert('error')
+
+            })
     }
 
     if (loading) {
